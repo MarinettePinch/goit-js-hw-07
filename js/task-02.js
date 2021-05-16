@@ -29,12 +29,16 @@ const itemsIngredients = ingredients.map((ingredient) => {
 // вписываем значения ингридиентов в пункты списка
   item.textContent = ingredient;
 
-// добавляем каждый пункт в конец списка ul#ingredients
-  listIngredients.appendChild(item);
-
-// возвращаем новый список
-  return listIngredients;
+// возвращаем массив из строк с валидной разметкой 
+// с тегами li и текстом из исходного массива
+  return item.outerHTML;
 });
+
+// превращаем полученный массив с строку с разделителем ' ',
+// а затем браузет распарсит её и превратит их в валидные li 
+// внутри списка ul.ingredients
+
+listIngredients.innerHTML = itemsIngredients.join(' ');
 
 
 
