@@ -32,40 +32,20 @@ const images = [
 
 const galleryEl = document.querySelector('#gallery');
 
-// Пишем функцию создания элемента:
+// Пишем функцию создания одной строки:
 
-const makeElGallery = ({url, alt}) => {
-  // Создаем элемент li
-  const item = document.createElement('li');
-  
-// Создаем элемент img
-  const picture = document.createElement('img');
-
-// Присваиваем элементу img атрибуты
-picture.setAttribute('url', url);
-picture.setAttribute('alt', alt);  
-  
-  // Вкладываем img в li
- item.appendChild(picture);
-
- // Возвращаем готовый элемент
-  return item;
+const makeGalleryMarkup = ({url, alt}) => {
+  // Создаем шаблонную строку и возвращаем её
+  return `<li><img url='${url}' alt='${alt}'></li>`;
 }
 
+// Перебираем массив объектов, присоединяем, получаем одну строку из строк
+// тегов со свойствами
 
-// Перебираем массив объектов, получаем массив тегов со свойствами
+const imgString = images.map(makeGalleryMarkup).join('');
 
-const imagesEl = images.map(makeElGallery);
-
-//console.log(imagesEl);
-
-//galleryEl.append(...imagesEl);
-
-
-
-// Преобразуем полученный массив в строку
-//const imgString = f;
+console.log(imgString);
 
 // Итоговая запись - передаем для вставки готовую строку
 
-//galleryEl.insertAdjacentHTML(afterbegin, imgString);
+galleryEl.insertAdjacentHTML('afterbegin', imgString);
