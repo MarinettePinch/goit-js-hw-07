@@ -4,7 +4,7 @@
 
 // Используй массив объектов images для создания тегов img 
 // вложенных в li. Для создания разметки используй 
-// шаблонные строки и insertAdjacentHTML().
+// шаблонные строки `Здесь вставить кусок кода ${value}` и insertAdjacentHTML().
 
 //Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 //Добавь минимальное оформление галереи флексбоксами 
@@ -27,3 +27,45 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+// Получаем доступ к ul#gallery
+
+const galleryEl = document.querySelector('#gallery');
+
+// Пишем функцию создания элемента:
+
+const makeElGallery = ({url, alt}) => {
+  // Создаем элемент li
+  const item = document.createElement('li');
+  
+// Создаем элемент img
+  const picture = document.createElement('img');
+
+// Присваиваем элементу img атрибуты
+picture.setAttribute('url', url);
+picture.setAttribute('alt', alt);  
+  
+  // Вкладываем img в li
+ item.appendChild(picture);
+
+ // Возвращаем готовый элемент
+  return item;
+}
+
+
+// Перебираем массив объектов, получаем массив тегов со свойствами
+
+const imagesEl = images.map(makeElGallery);
+
+//console.log(imagesEl);
+
+//galleryEl.append(...imagesEl);
+
+
+
+// Преобразуем полученный массив в строку
+//const imgString = f;
+
+// Итоговая запись - передаем для вставки готовую строку
+
+//galleryEl.insertAdjacentHTML(afterbegin, imgString);

@@ -31,14 +31,12 @@ const itemsIngredients = ingredients.map((ingredient) => {
 
 // возвращаем массив из строк с валидной разметкой 
 // с тегами li и текстом из исходного массива
-  return item.outerHTML;
+  return item;
 });
 
-// превращаем полученный массив с строку с разделителем ' ',
-// а затем браузет распарсит её и превратит их в валидные li 
-// внутри списка ul.ingredients
+// добывляем полученный массив в список ul.ingredients
 
-listIngredients.innerHTML = itemsIngredients.join(' ');
+listIngredients.append(...itemsIngredients);
 
 
 
