@@ -8,14 +8,16 @@
 
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
-// #validation-input {
-//   border: 3px solid #bdbdbd;
-// }
+const inputEl = document.querySelector('#validation-input');
 
-// #validation-input.valid {
-//   border-color: #4caf50;
-// }
+const updateOutputText = (event) => {
+    if (event.currentTarget.value.length === Number(inputEl.dataset.length)) {
+        inputEl.classList.add('valid');
+        inputEl.classList.remove('invalid');
+    } else{
+        inputEl.classList.add('invalid');
+        inputEl.classList.remove('valid');
+    } 
+}
 
-// #validation-input.invalid {
-//   border-color: #f44336;
-// }
+inputEl.addEventListener('blur', updateOutputText);
