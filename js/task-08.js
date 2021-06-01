@@ -65,6 +65,7 @@ const createBoxes = () => {
 
 const destroyBoxes = () => {
     refs.boxes.innerHTML = '';
+    amount = 0;
 }
 
 
