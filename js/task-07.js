@@ -13,9 +13,9 @@ const refs = {
 
 const fontSizeValues = ['10px', '12px', '14px', '16px', '18px', '24px', '36px'];
 
-refs.input.addEventListener('input', setFontSize);
+refs.input.addEventListener('input', onInputRangeInput);
 
-function setFontSize(event) {
+function onInputRangeInput(event) {
     const rangeValue = Number(event.srcElement.value);
     if (rangeValue === 0) {
         refs.span.style.fontSize = fontSizeValues[0];

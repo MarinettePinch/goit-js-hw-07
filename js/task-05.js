@@ -7,6 +7,6 @@ const outputEl = document.querySelector('#name-output');
 
 const inputEl = document.querySelector('#name-input');
 
-const updateOutputText = (event) => event.currentTarget.value ? outputEl.textContent = event.currentTarget.value : outputEl.textContent = 'незнакомец';
+const onInput = (event) => event.currentTarget.value ? outputEl.textContent = event.currentTarget.value : outputEl.textContent = 'незнакомец';
 
-inputEl.addEventListener('input', updateOutputText);
+inputEl.addEventListener('input', onInput);
