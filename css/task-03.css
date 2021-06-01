@@ -9,7 +9,7 @@
 
 #gallery li {
     margin: 10px;
-    flex-basis: calc(100% - 30px)/3;
+    flex-basis: calc(100% / 3 - 10px);
 }
 
 #gallery img {
