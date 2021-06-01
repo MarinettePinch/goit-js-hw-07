@@ -36,7 +36,7 @@ const galleryEl = document.querySelector('#gallery');
 
 const makeGalleryMarkup = ({url, alt}) => {
   // Создаем шаблонную строку и возвращаем её
-  return `<li><img src="${url}" alt="${alt}" width="1200"></li>`;
+  return `<li><img src="${url}" alt="${alt}"></li>`;
 }
 
 // Перебираем массив объектов, присоединяем, получаем одну строку из строк
