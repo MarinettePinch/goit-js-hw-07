@@ -25,7 +25,7 @@ console.log(creationMessage((categories).length));
 
 // 4. Получить доступ к пунктам категорий, перебрав массив, не изменяя его
 
-[...categories].forEach((category) => {
+categories.forEach((category) => {
 // 5. Вывести все заголовки
   const titleEl = category.querySelector('h2');
     console.log('Категория:', titleEl.textContent);
