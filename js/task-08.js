@@ -56,18 +56,17 @@ class Div {
 
 function createBoxes(amount) {
 
-    const divArray = [];
-      
+  const divArray = Array(amount).fill('');
 
-    for (let i = 0; i < amount; i += 1) {
+  const strings = divArray.map(string => {
+    
+    const div = new Div(rgbRandom(), rgbRandom(), rgbRandom(), size);
         
-        
-        const div = new Div(rgbRandom(), rgbRandom(), rgbRandom(), size);
-        
-        size += 10;
-        
-        divArray.push(div.getSting());
-    }
+    size += 10;
 
-    refs.boxes.insertAdjacentHTML('beforeend', divArray.join(''));
+    return string = div.getSting();
+  
+  }).join(' ');
+
+  refs.boxes.insertAdjacentHTML('beforeend', strings);
 }
